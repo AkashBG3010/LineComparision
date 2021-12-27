@@ -1,35 +1,38 @@
 package com.bridgelabz;
 
+import java.util.*;
+
 public class LineComparision {
 
-	static class Pair {
-		int first, second;
-		public Pair(int first, int second)
-		{
-			this.first = first;
-			this.second = second;
-		}
-	}
-	static void lineFromPoints(Pair P, Pair Q)
-	{
-		int a = Q.second - P.second;
-		int b = P.first - Q.first;
-		int c = a * (P.first) + b * (P.second);
-		if (b < 0) {
-			System.out.println(
-				"The line passing through points P and Q is: "
-				+ a + "x - " + b + "y = " + c);
-		}
-		else {
-			System.out.println(
-				"The line passing through points P and Q is: "
-				+ a + "x + " + b + "y = " + c);
-		}
-	}
-	public static void main(String[] args)
-	{
-		Pair P = new Pair(3, 2);
-		Pair Q = new Pair(2, 6);
-		lineFromPoints(P, Q);
-	}
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the Co-ordinates of x1 and y1: ");
+        int x1 = sc.nextInt();
+        int y1 = sc.nextInt();
+        
+        System.out.println("Enter the Co-ordinates of x2 and y2: ");
+        int x2 = sc.nextInt();
+        int y2 = sc.nextInt();
+        
+        Double len1 = Math.sqrt((x2 - x1) * (x2 - x1)  +  (y2 - y1) * (y2 - y1));
+        
+        System.out.println("Enter the Co-ordinates of x3 and y3: ");
+        int x3 = sc.nextInt();
+        int y3 = sc.nextInt();
+        
+        System.out.println("Enter the Co-ordinates of x4 and y4: ");
+        int x4 = sc.nextInt();
+        int y4 = sc.nextInt();
+        
+        Double len2 = Math.sqrt((x4 - x3) * (x4 - x3)  +  (y4 - y3) * (y4 - y3));
+        
+        System.out.println("Length of the first Line is: " + len1 + " units" );
+        System.out.println("Length of the second Line is: " + len2 + " units" );
+		  System.out.println();
+         if(len1.equals(len2))
+            System.out.println("Both Lines are EQUAL ");
+         else
+            System.out.println("Lines are NOT EQUAL");
+    }
 }
